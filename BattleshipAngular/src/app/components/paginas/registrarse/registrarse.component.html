@@ -1,0 +1,10 @@
+<h1> Registrar usuario </h1>
+
+<form [formGroup]="miForm">
+    <input  formControlName="username" type="email" placeholder="Usuario" />
+    <input  formControlName="email" type="email" placeholder="Correo" />
+    <input formControlName="password" type="password" placeholder="Contraseña" />
+    <button (click)="signup()">Iniciar sesión</button>
+</form>
+
+<a routerLink="/login"> Regresar </a>

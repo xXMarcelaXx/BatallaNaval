@@ -1,0 +1,8 @@
+<h1> SELECCIONAR PARTIDA </h1>
+
+<div class="opcion" *ngFor="let sesion of ListaSesiones" (click)="seleccionarSesion(sesion._id)">
+    <div> Unirse a partida </div>
+    <div> Host: {{sesion.host}}</div>
+</div>
+
+<button (click)="crearPartida()"> Crear Partida </button>

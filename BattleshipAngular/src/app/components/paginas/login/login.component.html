@@ -1,0 +1,9 @@
+<h1> Login </h1>
+
+<form [formGroup]="loginForm">
+    <input  formControlName="email" type="email" placeholder="Correo" />
+    <input formControlName="password" type="password" placeholder="Contraseña" />
+    <button (click)="login()">Iniciar sesión</button>
+</form>
+
+<a routerLink="/registrarse"> Crear usuario </a>

@@ -1,0 +1,42 @@
+<h1> Battleship </h1>
+
+<div class="ganador"  *ngIf="estado == 'terminada'">
+    <br><br>
+    FIN 
+    <br>
+    GANADOR {{ganador}}
+</div>
+
+<h1 class="titulo"> Turno de: {{nomTurno}}</h1>
+
+<div class="nombres">
+    <div class="nombre"> {{nomJugador}} </div>
+    <div class="nombre"> {{nomEnemigo}} </div>
+</div>
+
+<div class="juego">
+
+    <div class="tablero">
+            <div *ngFor="let casilla of tableroJ1; index as i" 
+            class="casilla"
+            [class.agua]="casilla.Estado == 1"
+            [class.barco]="casilla.Estado == 2"
+            [class.barcoDestruido]="casilla.Estado == 3"
+            [class.bombaSuelta]="casilla.Estado == 4"
+            >
+            {{casilla.Nombre}}
+            </div>
+    </div>
+
+    <div class="tablero">
+        <div *ngFor="let casilla of tableroJ2; index as i" 
+        class="casilla"
+        [class.agua]="casilla.Estado == 1 || casilla.Estado == 2"
+        [class.barcoDestruido]="casilla.Estado == 3"
+        [class.bombaSuelta]="casilla.Estado == 4"
+        (click)="atacarEnemigo(i)"
+        >
+        {{casilla.Nombre}}
+        </div>
+    </div>
+</div>
